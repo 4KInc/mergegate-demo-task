@@ -1,2 +1,14 @@
-on: []
-jobs: {}
+# PROTECTED PATH.
+#
+# The task contract lists .github/** as protected. A submission that modifies
+# this file is rejected regardless of whether the pinned tests pass — that is
+# the FAIL→refund demo flow.
+name: deploy
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "deploy gate"
